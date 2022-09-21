@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(2, 2, 52);
+}
+
+header {
+    background-color: rgb(48, 8, 50);
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    margin: 0px 0px 0px 10px;
+    align-items: center;
+}
+
+.avatar {
+    max-width: 100px;
+    height: auto;
+    margin-left: 5px;
+}
+
+nav {
+    
+}
+
+ul {
+    margin-right: 100px;
+}
+
+li {
+}
+
+
