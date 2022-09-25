@@ -5,67 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
 
-    <header>
-        <h1>G. Emre Taskale </h1>
-        <img src="assets/images/me n spongebob.jpg" alt="avatar" class="profilepic"/>
-        <nav>
-            <ul>
-                <li><a href="#about-me" >About Me</a></li>
-                <li><a href="#my-work" >My work</a></li>
-                <li><a href="#contact-me" >Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
+    <section class="container">
+        <header>
+            <h1>G. Emre Taskale </h1>
+            <img src="assets/images/Avatar.png" alt="avatar" class="profilepic"/>
+            <nav>
+                <ul>
+                    <li><a href="#about-me" >About Me</a></li>
+                    <li><a href="#my-work" >My work</a></li>
+                    <li><a href="#contact-me" >Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>   
 
-    <section class="subtitle">
-        <p>Code your dreams into reality</p>
-    </section>
+        <section class="banner">
+            <img src="assets/images/alone-forever-wallpaper-2560x1080_14.jpg" alt="banner image"/>
+            <p>Code your dreams into reality</p>
+        </section>
 
-    <main>
-        <article class="content">
-            <section> class="big">
-                <h3></h3>
-                <p></p>
-            </section>
-            <section class="small">
-                <h4></h4>
-                <p></p>
-            </section>
-            <section class="small">
-                <h4></h4>
-                <p></p>
-            </section>
-            <section class="small">
-                <h4></h4>
-                <p></p>
-            </section>
-            <section class="small">
-                <h4></h4>
-                <p></p>
-            </section>
-        </article>
         <aside class="sidebar">
-            <section>
-                <h2 id="about-me">About Me</h2>
+            <section id="about-me">
+                <h2>About Me</h2>
             </section>
-            <section>
-                <h2 id="my-work">My Work</h2>
+            <section id="my-work">
+                <h2>My Work</h2>
             </section>
         </aside>
-    </main>
 
-    <footer>
-        <h2 id="contact-me">Contact Me</h2>
-        <ul>
-            <li>#254-813-2833</li>
-            <li>email: taskaleg@gmail.com</li>
-            <li>github: @Em-T-Shells</li>
-        </ul>
-    </footer>
+        <main>
+            <section class="content">
+                <article> class="big">
+                    <h3>Web Design</h3>
+                    <p>HTML/CSS</p>
+                </article>
+                <article class="small">
+                    <h4>LED Wall</h4>
+                    <p>Node/IOT</p>
+                </article>
+                <article class="small">
+                    <h4>Calculator</h4>
+                    <p>CSS/JavaScript/REACT</p>
+                </article>
+                <article class="small">
+                    <h4>Puzzle</h4>
+                    <p>MERN Stack</p>
+                </article>
+                <article class="small">
+                    <h4>Run Buddy</h4>
+                    <p>HTML/CSS</p>
+                </article>
+            </section>
+        </main>
+
+        <footer id="contact-me">
+            <h2>Contact Me</h2>
+            <ul>
+                <li>#254-813-2833</li>
+                <li>email: taskaleg@gmail.com</li>
+                <li>github: @Em-T-Shells</li>
+            </ul>
+        </footer>
+    </section>
 
 </body>
 </html>
@@ -79,6 +84,7 @@ WHEN I click one of the links in the navigation
 THEN the UI scrolls to the corresponding section
 WHEN I click on the link to the section about their work
 THEN the UI scrolls to a section with titled images of the developer's applications
+
 WHEN I am presented with the developer's first application
 THEN that application's image should be larger in size than the others
 WHEN I click on the images of the applications
