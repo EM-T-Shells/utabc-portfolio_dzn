@@ -40,8 +40,9 @@ body {
     display: grid;
     grid-template: 200px auto auto 100px / repeat(3, 1fr);
     gap: 20PX;
-    width: 90%;
     margin: 0 auto;
+    width: 90%;
+    height: 100vh;
 }
 
 header {
@@ -92,13 +93,10 @@ nav {
     opacity: 0.;
 }
 
-ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
 li {
+    display: inline-block;
     font-size: 1.4rem;   
+    margin-right: 10px;
 }
 
 nav a {
@@ -300,21 +298,128 @@ h5 {
 
 
 /*browser resized to breakpoint will render a mobile layout*/
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 200px auto auto 100px;
+@media (max-width: 800px) {
+    body {
+        background-repeat: repeat;
     }
-    header, .banner, aside, main, footer {
-        grid-column-start: span 1;
+    .container  {
+    grid-template: 200px auto auto 100px / repeat(3, 1fr);
+    }
+    header {
+        font-size: 1.5rem;
+        border-radius: 10%;
+        border: 1px solid var(--cp-dark-blue);
+        align-self: center;
+    }
+    li {
+        display: grid;   
+        margin-top: 13px;
+    }
+    h1 {
+        font-size: 2rem;
+        bottom: 40%;
+    }
+
+    .banner p {
+        position: static;
+        text-align: center;      
+    }
+    .banner img {
+        padding: 0px 0px 20px 0px;
+    }
+    .content {
+        justify-content: center;
+        width: 100%;
+    }
+
+    aside, h2 {
+        width: 100%;
+        font-size: 3rem;
+        border-radius: 0%;
+    }
+
+    .about {
+        text-align: center;
+        width: auto;
+        background-color: var(--cp-dark-blue);
+    }
+
+    .small {
+        width: 90%;
+        height: fit-content;
     }
 }
 
 
 
 
-/*  --notes 
-resizing to mobile where all components are column span 1 -- stacked
-why the banner p not moving to the right? 
-in the end make all main container borders roll bock into background
-*/
+@media (max-width: 400px) {
+
+body {
+    background-repeat: repeat;
+    width: 100%;
+}
+.container, header, .banner, .content, main, aside {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr ; 
+}
+header {
+    display: block;
+}
+.profilepic {
+    float: left;
+    width: 150px;
+}
+li {
+    display: grid;   
+    margin-top: 13px;
+    font-size: 1rem;
+    
+}
+h1 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.banner p {
+    position: static;
+    text-align: center;      
+}
+.banner img {
+    padding: 0px 0px 20px 0px;
+}
+.content {
+    display: grid;
+}
+
+.about {
+    font-size: 1rem;
+    text-align: justify;
+    border-radius: 0%;
+}
+
+aside {
+    display: none;
+}
+
+#aboutme, #mywork {
+
+}
+
+aside, h2 {
+    width: 100%;
+    font-size: 3rem;
+    border-radius: 0%;
+}
+
+.about {
+    text-align: center;
+    width: auto;
+    background-color: var(--cp-dark-blue);
+}
+
+.small {
+    width: 90%;
+    height: fit-content;
+}
+}
