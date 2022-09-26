@@ -31,7 +31,7 @@ body {
     font-family: 'Share Tech Mono', monospace, arial, helvetica;
     background-image: url(images/bkd.jpg);
     background-size: cover;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 }
 
 /*browser resizing setup*/
@@ -40,7 +40,6 @@ body {
     display: grid;
     grid-template: 200px auto auto 100px / repeat(3, 1fr);
     gap: 20PX;
-    height: auto;
     width: 90%;
     margin: 0 auto;
 }
@@ -61,7 +60,7 @@ header {
     max-width: 200px;
     height: auto;  
     border: 7px solid var(--cp-dark-blue);
-    border-radius: 70% 10% 70% 10%;    
+    border-radius: 40% 20% 40% 20%;    
     justify-self: center;
 }
 
@@ -249,16 +248,14 @@ article:hover {
     border-radius: 40% 0% 40% 0%;
     opacity: 0.7;
     padding: 50px;
-    justify-items: end;
 }
 
 .big h3, .big p {
-    position: relative;
-    top: 50%;
-    left: 10%;
-    font-size: 1.5rem;
     font-size: 2rem;
-    text-decoration: none;
+}
+
+.big h3 {
+    text-decoration: underline;
 }
 
 .small {
@@ -269,6 +266,10 @@ article:hover {
     opacity: 0.7;
     border-radius: 20% 0%;
     padding: 40px;
+}
+
+.small h4 {
+    text-decoration: underline;
 }
 
 
