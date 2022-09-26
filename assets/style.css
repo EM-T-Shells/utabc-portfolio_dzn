@@ -29,8 +29,9 @@
 
 body {
     font-family: 'Share Tech Mono', monospace, arial, helvetica;
-    background-image: url(images/abstract.jpg);
+    background-image: url(images/bkd.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /*browser resizing setup*/
@@ -39,7 +40,7 @@ body {
     display: grid;
     grid-template: 200px auto auto 100px / repeat(3, 1fr);
     gap: 15PX;
-    height: 100vh;
+    height: 100%;
     width: 90%;
     margin: 0 auto;
 }
@@ -47,26 +48,30 @@ body {
 header {
     display: grid;
     grid-column: span 3;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     grid-template-areas: 
         "h1 profilepic nav";
     background-color: rgb(37, 2, 97, 0.6);
-    border: 4px solid var(--cp-dark-blue);
+    border: 20px double var(--cp-dark-blue);
+    border-radius: 60% 10% 60% 10%;
 }
 
 .profilepic {
     grid-area: profilepic;
-    max-width: 235px;
+    max-width: 200px;
     height: auto;  
-    border: 1px solid rgb(12, 205, 235);
-    border-radius: 10%; 
+    border: 7px solid var(--cp-dark-blue);
+    border-radius: 70% 10% 70% 10%;    
     justify-self: center;
 }
 
 h1 {
     grid-area: h1;
     align-self: flex-end;
-    justify-self: center;
+    justify-self: left;
+    position: relative;
+    bottom: 5px;
+    left: 10px;
     font-size: 3rem;
     color: #08a4e1;
     text-shadow:
@@ -82,8 +87,11 @@ h1 {
 
 nav {
     grid-area: nav;
-    justify-self: center;
-    align-self: flex-end
+    justify-self: right;
+    align-self: baseline;
+    position: relative;
+    top: 5px;
+
 }
 
 ul li {
@@ -95,7 +103,9 @@ li {
     font-size: 1.7rem;   
 }
 
-a {
+nav a {
+    border: transparent;
+    border-radius: 0% 30%;
     background-image: linear-gradient(
       to right,
       #54b3d6,
@@ -110,7 +120,7 @@ a {
     transition: all 0.3s ease-in-out;
   }
   
-  a:before {
+  nav a:before {
     content: '';
     background: #54b3d6;
     display: block;
@@ -120,47 +130,195 @@ a {
     width: 0;
     height: 3px;
     transition: all 0.3s ease-in-out;
+    
   }
   
-  a:hover {
+  nav a:hover {
    background-position: 0;
+   
   }
   
-  a:hover::before {
+  nav a:hover::before {
     width:100%;
   }
 
 .banner {
     grid-column: span 3;
     display: grid;
+    grid-template-columns: 1fr; 
     position: relative;
-    
 }
 
 .banner img {
     width: 100%;
     height: auto;
     opacity: 0.7;
-
+    border: 1px white solid;
+    border-radius: 20% 10% 20% 10%;
 }
 
 .banner p {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 3rem;
+    justify-self: right;
+    align-self: flex-end;
+    right: 50px;
+    bottom: 90px;
+    font-size: 2.5rem;
     color: #1ce61500;
     animation: flicker 1.5s infinite alternate;     
  }
 
+.content {
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 1;
+    display: grid;
+    grid-template: 30% 1fr / 30% repeat(2, 1fr);
+    grid-template-areas: 
+        "aside main main"
+        "aside main main";
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
 aside {
-    grid-column-start: 1;
-    background-color: aqua;
+    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-rows: inherit;
+    position: relative;
+    top: 10px;
+    background-color: rgba(97, 15, 62, 0.0);
+    border-right: 10px solid rgb(78, 217, 255);
+    border-radius: 20%;
+    background-color: indigo;
+    opacity: 0.8;
+}
+
+#about-me h2{
+    position: relative;
+    top: 25px;
+    right: 80px;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    border: 20px solid rgb(218, 165, 112);
+    border-radius: 20%;
+    background-color: rgb(218, 165, 112);
+
+}
+
+
+#about-me {
+    grid-row-start: 1;
+    display: inline-block;
+    justify-self: end;
+    align-self: center;
+}
+
+#my-work h2{
+    position: relative;
+    right: 80px;
+    top: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    border: 20px solid rgb(112, 218, 204);
+    border-radius: 15%;
+    background-color: rgb(112, 218, 204);
+
+}
+
+#my-work {
+  grid-row-start: 2;
+  display: inline-block;
+  justify-self: end;
+  align-self: center;
+  position: relative;
+}
+
+main > p, article {
+    border-radius: 17%;
 }
 
 main {
-    grid-column-start: span 2;
-    background-color: blueviolet;
+    position: relative;
+    top: 50px;
+    height: 96.7%;
+    grid-area: main;
+    grid-column: 2 / span 2;
+    grid-row: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+        "about about"
+        "big big"
+        "small small"
+        "small small";
+    row-gap: 20px;
+    border: 2px solid transparent;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
+}
+
+article:hover {
+    box-shadow: 0 5px 15px rgb(6, 242, 25);
+    color: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+.about {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    height: auto;
+    padding: 20px;
+    font-size: 2rem;
+    background-color: rgb(10, 169, 243);
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: 2;
+    background-color: #e24177;
+    position: relative;
+    height: 70%;
+    width:80%;
+    justify-self: center;
+    position: relative;
+    top: 20px;
+    border-top: 2px solid currentColor;
+    border-radius: 40% 0% 40% 0%;
+    opacity: 0.5;
+}
+
+.big h3 {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.big p {
+    font-size: 2rem;
+}
+
+.big h3, .big p {
+    position: relative;
+    top: 50%;
+    left: 10%;
+    font-size: 1.5rem;
+}
+
+.small {
+    background-color: #0f08e1;
+    width:70%;
+    position: relative;
+    height: 70%;
+    bottom: 15px;
+    justify-self:center;
+    align-self: center;
+    opacity: 0.5;
+}
+
+.small h4, .small p {
+    position: relative;
+    top: 50%;
+    left: 10%;
 }
 
 footer {
