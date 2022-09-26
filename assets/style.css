@@ -31,7 +31,7 @@ body {
     font-family: 'Share Tech Mono', monospace, arial, helvetica;
     background-image: url(images/bkd.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 
 /*browser resizing setup*/
@@ -39,8 +39,8 @@ body {
 .container {
     display: grid;
     grid-template: 200px auto auto 100px / repeat(3, 1fr);
-    gap: 15PX;
-    height: 100%;
+    gap: 20PX;
+    height: auto;
     width: 90%;
     margin: 0 auto;
 }
@@ -52,8 +52,8 @@ header {
     grid-template-areas: 
         "h1 profilepic nav";
     background-color: rgb(37, 2, 97, 0.6);
-    border: 20px double var(--cp-dark-blue);
-    border-radius: 60% 10% 60% 10%;
+    border: 20px solid var(--cp-dark-blue);
+    border-radius: 60% 0% 60% 0%;
 }
 
 .profilepic {
@@ -70,19 +70,18 @@ h1 {
     align-self: flex-end;
     justify-self: left;
     position: relative;
-    bottom: 5px;
-    left: 10px;
+    bottom: 10px;
+    left: 30px;
     font-size: 3rem;
-    color: #08a4e1;
+    color: #810a7d;
     text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
+    0 0 42px rgb(255, 0, 128),
+    0 0 82px rgb(255, 0, 128),
+    0 0 102px rgb(255, 0, 128),
+    0 0 151px rgb(255, 0, 128);
 }
 
 nav {
@@ -90,8 +89,8 @@ nav {
     justify-self: right;
     align-self: baseline;
     position: relative;
-    top: 5px;
-
+    top: 7px;
+    opacity: 0.;
 }
 
 ul li {
@@ -100,7 +99,7 @@ ul li {
 }
 
 li {
-    font-size: 1.7rem;   
+    font-size: 1.4rem;   
 }
 
 nav a {
@@ -109,7 +108,7 @@ nav a {
     background-image: linear-gradient(
       to right,
       #54b3d6,
-      #54b3d6 50%,
+      rgb(255, 0, 128) 50%,
       #000 90%
     );
     background-size: 200% 100%;
@@ -144,26 +143,22 @@ nav a {
 
 .banner {
     grid-column: span 3;
-    display: grid;
-    grid-template-columns: 1fr; 
-    position: relative;
+    margin: 0 10%;
 }
 
 .banner img {
     width: 100%;
     height: auto;
-    opacity: 0.7;
-    border: 1px white solid;
-    border-radius: 20% 10% 20% 10%;
-}
+    opacity: 0.6;
+    border: transparent;
+    border-radius: 10% 30% 1% 25%;
+    }
 
 .banner p {
-    position: absolute;
-    justify-self: right;
-    align-self: flex-end;
-    right: 50px;
-    bottom: 90px;
-    font-size: 2.5rem;
+    position: relative;
+    bottom: 28%;
+    left: 57%;
+    font-size: 2.1rem;
     color: #1ce61500;
     animation: flicker 1.5s infinite alternate;     
  }
@@ -172,89 +167,58 @@ nav a {
     grid-column: 1 / span 3;
     grid-row: 3 / span 1;
     display: grid;
-    grid-template: 30% 1fr / 30% repeat(2, 1fr);
+    grid-template: repeat(2,1fr) / 1fr 2fr;
     grid-template-areas: 
         "aside main main"
         "aside main main";
-    column-gap: 40px;
-    row-gap: 20px;
+    width: 70%;
+    justify-self: center;
+    justify-content: space-evenly;
 }
 
 aside {
-    grid-row: 1 / span 2;
+    grid-row: span 2;
     display: grid;
-    grid-template-rows: inherit;
-    position: relative;
-    top: 10px;
-    background-color: rgba(97, 15, 62, 0.0);
-    border-right: 10px solid rgb(78, 217, 255);
-    border-radius: 20%;
-    background-color: indigo;
-    opacity: 0.8;
-}
-
-#about-me h2{
-    position: relative;
-    top: 25px;
-    right: 80px;
-    color: rgb(255, 255, 255);
-    font-size: 3rem;
-    border: 20px solid rgb(218, 165, 112);
-    border-radius: 20%;
-    background-color: rgb(218, 165, 112);
-
-}
-
-
-#about-me {
-    grid-row-start: 1;
-    display: inline-block;
-    justify-self: end;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    width: 90%;
+    justify-items: start;
+    align-items: center;
     align-self: center;
+    background-color: rgba(97, 15, 62);
+    border-right: 10px double rgb(78, 217, 255);
+    border-radius: 5% 50% 50% 5%;
+    background-color: indigo;
+    opacity: 0.7;
 }
 
-#my-work h2{
-    position: relative;
-    right: 80px;
-    top: 25px;
+#my-work, #about-me {
     color: rgb(255, 255, 255);
     font-size: 3rem;
-    border: 20px solid rgb(112, 218, 204);
-    border-radius: 15%;
-    background-color: rgb(112, 218, 204);
-
+    border-radius: 0% 10% 10% 0%;
+    padding: 19px;
+    background-color: #0fa;
 }
 
 #my-work {
-  grid-row-start: 2;
-  display: inline-block;
-  justify-self: end;
-  align-self: center;
-  position: relative;
-}
-
-main > p, article {
-    border-radius: 17%;
+    padding-right: 40px;
 }
 
 main {
-    position: relative;
-    top: 50px;
-    height: 96.7%;
     grid-area: main;
     grid-column: 2 / span 2;
     grid-row: span 3;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 1fr auto;
     grid-template-areas: 
         "about about"
         "big big"
         "small small"
         "small small";
-    row-gap: 20px;
+    row-gap: 30px;
+    justify-self: center;
     border: 2px solid transparent;
-    opacity: 0.7;
     transition: all 0.2s ease-in-out;
 }
 
@@ -267,34 +231,25 @@ article:hover {
 .about {
     grid-column: 1 / span 2;
     grid-row: 1 / span 1;
-    height: auto;
-    padding: 20px;
-    font-size: 2rem;
-    background-color: rgb(10, 169, 243);
+    font-size: 1.5rem;
+    text-align: justify;
+    background-color: rgba(243, 10, 126, 0.308);
+    opacity: 0.8;
+    padding: 25px;
+    border-radius: 15%;
 }
 
 .big {
     grid-column: span 2;
-    grid-row: 2;
-    background-color: #e24177;
-    position: relative;
-    height: 70%;
-    width:80%;
+    grid-row-start: 2;background-color: #e24177;
+    width: 80%;
+    align-self: baseline;
     justify-self: center;
-    position: relative;
-    top: 20px;
-    border-top: 2px solid currentColor;
+    border-top: 3px solid white;
     border-radius: 40% 0% 40% 0%;
-    opacity: 0.5;
-}
-
-.big h3 {
-    font-size: 2rem;
-    text-decoration: none;
-}
-
-.big p {
-    font-size: 2rem;
+    opacity: 0.7;
+    padding: 50px;
+    justify-items: end;
 }
 
 .big h3, .big p {
@@ -302,28 +257,44 @@ article:hover {
     top: 50%;
     left: 10%;
     font-size: 1.5rem;
+    font-size: 2rem;
+    text-decoration: none;
 }
 
 .small {
     background-color: #0f08e1;
-    width:70%;
-    position: relative;
-    height: 70%;
-    bottom: 15px;
+    width:80%;
     justify-self:center;
-    align-self: center;
-    opacity: 0.5;
+    align-self: baseline;
+    opacity: 0.7;
+    border-radius: 20% 0%;
+    padding: 40px;
 }
 
-.small h4, .small p {
-    position: relative;
-    top: 50%;
-    left: 10%;
-}
 
 footer {
     grid-column-start: span 3;
+    width: 90%;
+    justify-self: center;
+    align-self: baseline;
+    padding: 40px;
     background-color: var(--cp-dark-blue);
+    opacity: 0.6;
+    border-radius: 50% 50% 0% 0%;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+h5, ul {
+    text-align: center;
+}
+
+h5 {
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 
