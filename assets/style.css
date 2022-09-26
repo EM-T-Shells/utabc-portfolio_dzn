@@ -225,7 +225,7 @@ article:hover {
     opacity: 1;
 }
 
-.about {
+#about {
     grid-column: 1 / span 2;
     grid-row: 1 / span 1;
     font-size: 1.5rem;
@@ -236,7 +236,7 @@ article:hover {
     border-radius: 15%;
 }
 
-.big {
+#big {
     grid-column: span 2;
     grid-row-start: 2;background-color: #e24177;
     width: 80%;
@@ -248,11 +248,11 @@ article:hover {
     padding: 50px;
 }
 
-.big h3, .big p {
+#big h3, #big p {
     font-size: 2rem;
 }
 
-.big h3 {
+#big h3 {
     text-decoration: underline;
 }
 
@@ -298,7 +298,7 @@ h5 {
 
 
 /*browser resized to breakpoint will render a mobile layout*/
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     body {
         background-repeat: repeat;
     }
@@ -338,13 +338,13 @@ h5 {
         border-radius: 0%;
     }
 
-    .about {
+    #about {
         text-align: center;
         width: auto;
         background-color: var(--cp-dark-blue);
     }
 
-    .small {
+    #small {
         width: 90%;
         height: fit-content;
     }
@@ -353,7 +353,7 @@ h5 {
 
 
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 
 body {
     background-repeat: repeat;
@@ -392,7 +392,7 @@ h1 {
     display: grid;
 }
 
-.about {
+#about {
     font-size: 1rem;
     text-align: justify;
     border-radius: 0%;
@@ -408,7 +408,7 @@ aside, h2 {
     border-radius: 0%;
 }
 
-.about {
+#about {
     text-align: center;
     width: auto;
     background-color: var(--cp-dark-blue);
