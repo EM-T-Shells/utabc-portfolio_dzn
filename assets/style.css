@@ -31,7 +31,7 @@ body {
     font-family: 'Share Tech Mono', monospace, arial, helvetica;
     background-image: url(images/bkd.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
 
 /*browser resizing setup*/
@@ -189,7 +189,6 @@ aside {
 }
 
 #my-work, #about-me {
-    color: rgb(255, 255, 255);
     font-size: 3rem;
     border-radius: 0% 10% 10% 0%;
     padding: 19px;
@@ -297,7 +296,25 @@ h5 {
 
 
 /*browser resized to breakpoint will render a mobile layout*/
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+    .banner p {
+        left: 20%;
+        bottom: 15%;
+        font-size: 2rem;
+        color: #60056598;
+     }
+     #about-me, #my-work {
+        font-size: 2rem;
+     }
+     #about {
+        opacity: 0.85;
+        background-color: #4908e1;
+        text-align: center;
+     }
+}
+
+
+@media (max-width: 900px) {
     body {
         background-repeat: repeat;
     }
@@ -352,7 +369,7 @@ h5 {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
 
 body {
     background-repeat: repeat;
