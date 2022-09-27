@@ -32,14 +32,14 @@ https://www.codecademy.com/learn/paths/fscj-22-web-development-foundations/track
 https://css-tricks.com/css-link-hover-effects/  
 https://css-tricks.com/a-complete-guide-to-css-media-queries/  
 
-### [See the live Webpage]
+### [See the live Webpage](https://em-t-shells.github.io/utabc-portfolio_dzn/)
 #
 ### Curator: Emre Taskale 
 ### Follow me on GitHub!  
 ### [<a href="https://github.com/EM-T-Shells"><img alt="EM-T-Shells" src="assets/images/Octocat.png" width=150x/></a>]()
 #
 
-![]
+![](https://img.shields.io/website?color=cyan&style=for-the-badge&up_message=It%27s%20Alive%21&url=https%3A%2F%2Fem-t-shells.github.io%2Futabc-portfolio_dzn%2F)
 
 ![](https://img.shields.io/github/license/Em-t-shells/utabc-into-the-horizon?style=for-the-badge)
 #
